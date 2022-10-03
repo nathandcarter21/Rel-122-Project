@@ -1,7 +1,22 @@
 import Head from 'next/head'
+import { useState } from 'react';
 import styles from '../styles/Home.module.css'
 
+let questions = ["Hello World", "Hello Future nathan"];
+let answers = [0, 1];
+let answerChoices = [[1, 2, 3, 4], [5, 6, 7, 8]]
+
+
 export default function Home() {
+  let [question, setQuestion] = useState(0);
+  let [answer, setAnswer] = useState(0);
+  let [score, setScore] = useState(0);
+
+  function CheckAnswer() {
+    if (answer === answers[question]) {
+      setScore(score + 1);
+    }
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -12,9 +27,40 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hello World
+          Who said it?
         </h1>
-      </main>
-    </div>
+        <h2>Question {question + 1}</h2>
+
+
+        <p className={styles.quote}>"{questions[question]}"</p>
+        <div className={styles.answers}>
+          <button className={styles.answer} onClick={() => {
+            setAnswer(0);
+          }}>A) {answerChoices[question][0]}</button>
+          <button className={styles.answer} onClick={() => {
+            setAnswer(1);
+          }}>A) {answerChoices[question][1]}</button>
+          <button className={styles.answer} onClick={() => {
+            setAnswer(2);
+          }}>A) {answerChoices[question][2]}</button>
+          <button className={styles.answer} onClick={() => {
+            setAnswer(3);
+          }}>A) {answerChoices[question][3]}</button>
+        </div>
+        <div className={styles.submitDiv}>
+          <button className={styles.submit} onClick={() => {
+            CheckAnswer();
+            if (question < 1)
+              setQuestion(question + 1);
+            else
+              console.log("You win");
+          }}>Submit</button>
+        </div>
+        <div className="score">
+          <h2 className={styles.score}>Score: {score}/10</h2>
+        </div>
+
+      </main >
+    </div >
   )
 }

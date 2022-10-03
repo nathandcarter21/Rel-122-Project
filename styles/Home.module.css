@@ -1,21 +1,20 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 1rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
@@ -51,7 +50,7 @@
 }
 
 .description {
-  margin: 4rem 0;
+  margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -116,14 +115,66 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
+}
+
+.quote {
+  font-size: 2rem;
+  width: 80%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.answer,
+.submit {
+  width: 200px;
+  height: 75px;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1em;
+  border: 1px solid black;
+  background-color: rgb(50, 50, 50);
+  transition: .4s;
+  font-size: x-large;
+
+}
+
+.answer:hover,
+.answer:focus,
+.answer:active,
+.submit:hover,
+.submit:focus,
+.submit:active {
+  background-color: rgb(25, 25, 25);
+}
+
+.submitDiv {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.answers {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.score {
+  text-align: center;
 }
