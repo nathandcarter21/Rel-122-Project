@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react';
+import GameOver from '../components/GameOver';
 import styles from '../styles/Home.module.css'
 
 let questions = ["Hello World", "Hello Future nathan"];
@@ -11,9 +12,10 @@ export default function Home() {
   let [question, setQuestion] = useState(0);
   let [answer, setAnswer] = useState(0);
   let [score, setScore] = useState(0);
+  let [gameOver, setGameOver] = useState(false);
 
   function CheckAnswer() {
-    if (answer === answers[question]) {
+    if (answer === answers[question] && !gameOver) {
       setScore(score + 1);
     }
   }
@@ -49,17 +51,20 @@ export default function Home() {
         </div>
         <div className={styles.submitDiv}>
           <button className={styles.submit} onClick={() => {
-            CheckAnswer();
-            if (question < 1)
+            if (question < 1) {
+              CheckAnswer();
               setQuestion(question + 1);
-            else
-              console.log("You win");
+            }
+            else {
+              CheckAnswer();
+              setGameOver(true);
+            }
           }}>Submit</button>
         </div>
         <div className="score">
           <h2 className={styles.score}>Score: {score}/10</h2>
+          <GameOver score={score} gameOver={gameOver} />
         </div>
-
       </main >
     </div >
   )
