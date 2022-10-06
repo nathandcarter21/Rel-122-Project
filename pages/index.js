@@ -3,9 +3,9 @@ import { useState } from 'react';
 import GameOver from '../components/GameOver';
 import styles from '../styles/Home.module.css'
 
-let questions = ["Hello World", "Hello Future nathan"];
-let answers = [0, 1];
-let answerChoices = [[1, 2, 3, 4], [5, 6, 7, 8]]
+let questions = ["Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.",];
+let answers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let answerChoices = [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 
 
 export default function Home() {
@@ -41,17 +41,17 @@ export default function Home() {
           }}>A) {answerChoices[question][0]}</button>
           <button className={styles.answer} onClick={() => {
             setAnswer(1);
-          }}>A) {answerChoices[question][1]}</button>
+          }}>B) {answerChoices[question][1]}</button>
           <button className={styles.answer} onClick={() => {
             setAnswer(2);
-          }}>A) {answerChoices[question][2]}</button>
+          }}>C) {answerChoices[question][2]}</button>
           <button className={styles.answer} onClick={() => {
             setAnswer(3);
-          }}>A) {answerChoices[question][3]}</button>
+          }}>D) {answerChoices[question][3]}</button>
         </div>
         <div className={styles.submitDiv}>
           <button className={styles.submit} onClick={() => {
-            if (question < 1) {
+            if (question < 9) {
               CheckAnswer();
               setQuestion(question + 1);
             }
