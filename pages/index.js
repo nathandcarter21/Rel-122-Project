@@ -76,6 +76,11 @@ export default function Home() {
           <h2 className={styles.score}>Score: {score}/10</h2>
           <GameOver score={score} gameOver={gameOver} />
         </div>
+        <footer>
+          <h4>
+            Created by Nathan Carter
+          </h4>
+        </footer>
       </main >
     </div >
   )
