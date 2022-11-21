@@ -3,9 +3,20 @@ import { useState } from 'react';
 import GameOver from '../components/GameOver';
 import styles from '../styles/Home.module.css'
 
-let questions = ["Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.", "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt illum tempore consequuntur distinctio sapiente quaerat exercitationem.",];
-let answers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-let answerChoices = [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+let questions = [
+  "But charity is the pure love of Christ, and it endureth forever; and whoso is found possessed of it at the last day, it shall be well with him.",
+  "Now the Nephites were taught to defend themselves against their enemies, even to the shedding of blood if it were necessary; yea, and they were also taught never to give an offense, yea, and never to raise the sword except it were against an enemy, except it were to preserve their lives.",
+  "For verily, verily I say unto you, he that hath the spirit of contention is not of me, but is of the devil, who is the father of contention, and he stirreth up the hearts of men to contend with anger, one with another.",
+  "Now they did not sin ignorantly, for they knew the will of God concerning them, for it had been taught unto them; therefore they did wilfully rebel against God.",
+  "But who may abide the day of his coming, and who shall stand when he appeareth? For he is like a refiner's fire, and like fuller's soap.",
+  "O my brethren, if ye could be healed by merely casting about your eyes that ye might be healed, would ye not behold quickly, or would ye rather harden your hearts in unbelief, and be slothful, that ye would not cast about your eyes, that ye might perish?",
+  "And then shall that which is written come to pass: Sing, O barren, thou that didst not bear; break forth into singing, and cry aloud, thou that didst not travail with child; for more are the children of the desolate than the children of the married wife, saith the Lord.",
+  "And he saith: These scriptures, which ye had not with you, the Father commanded that I should give unto you; for it was wisdom in him that they should be given unto future generations.",
+  "And many graves shall be opened, and shall yield up many of their dead; and many saints shall appear unto many.",
+  "And after the house of Israel should be scattered they should be gathered together again; or, in fine, after the Gentiles had received the fulness of the Gospel, the natural branches of the olive tree, or the remnants of the house of Israel, should be grafted in, or come to the knowledge of the true Messiah, their Lord and their Redeemer."
+];
+let answers = [2, 1, 3, 0, 3, 2, 1, 0, 2, 1];
+let answerChoices = [['Nephi', 'Moroni', 'Mormon', 'Alma II'], ['Mormon', 'Moroni', 'Alma II', 'Isaiah'], ['Alma I', "Nephi", 'Moroni', 'Jesus'], ['Mormon', 'Samuel', 'Moroni', 'Malachi'], ['Laman', 'Jesus', 'Moroni', 'Malachi'], ['Nephi', 'Jesus', 'Alma II', 'Lehi'], ['Jesus', 'Isaiah', 'Alma I', 'Lehi'], ['Jesus', 'Nephi', 'Malachi', 'Isaiah'], ['Helaman', 'Nephi', 'Samuel', 'Moroni'], ['Lehi', 'Nephi', 'Laman', 'Lemuel']]
 
 
 export default function Home() {
